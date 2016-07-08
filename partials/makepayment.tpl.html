@@ -1,0 +1,12 @@
+<div class="modal-header">
+  <!--button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button-->
+  <h3>Make Payment</h3>
+</div>
+<div class="modal-body">
+  <p>for user: {{uid}} Rs. {{amount}}</p>
+  <br />
+  <input type="text" class="form-control" id="pmt-amt" placeholder="Enter amount" ng-model="amount"/>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn" ng-click="ok(amount)">Pay Now</button>
+</div>
