@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html ng-app="tbfApp">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBF Gym</title>
+    <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular.js"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular-route.js"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular-mocks.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script-->
+    <!--
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/angular.strap/2.3.9/angular-strap.min.js"></script>
+    -->
+    <!--
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/angular.strap/2.3.9/angular-strap.tpl.min.js"></script>
+    -->
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script-->
+    <link rel="stylesheet" href="style.css" />   
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <!--script type="text/javascript">
+      angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script-->
+  </head>
+
+  <header>
+    <!-- row 1: navigation -->
+    <nav class="navbar navbar-default navi-bar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand active" href="#/">Home</a>
+    </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="merchandise">Merchandise <span class="sr-only">(current)</span></a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="blog">Blog</a></li>
+        <li><a href="training">Training</a></li>
+        <li><a href="nutrition">Nutrition</a></li>
+        <li><a href="subscription">Subscriptions</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="events/calisthenics">Calisthenics</a></li>
+            <li><a href="events/yoga">Yoga</a></li>
+            <li><a href="events/weightloss">Weight Loss</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="events/mysixpack">My Six Pack</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="events/mrfitharyana">Mr. Fit Haryana</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="tools/bmicalculator">BMI Calculator</a></li>
+            <li><a href="tools/fatpercentcalculator">Fat Percent Calculator</a></li>
+            <li><a href="tools/calorieintakecalculator">Calorie Intake Calculator</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="tools/myburntcalories">My Burnt Calories</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="tools/idealweightcalculator">Ideal Weight Calculator</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <p class="navbar-text userinfo" ng-show="email">Signed in as {{email}}</p>
+      
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="logout" ng-show="email" ng-click="logout()">Logout</a></li>
+        <li><a href="login" ng-show="!email">Login</a></li>
+        <li><a href="register" ng-show="!email">Signup</a></li>
+        <li class="dropdown" ng-show="email">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="profile">Profile</a></li>
+            <li><a href="settings/subscription">Subscription</a></li>
+            <li><a href="settings/workouts">Workouts</a></li>
+            <li><a href="settings/fitnessgoals">Fitness Goals</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+  <body ng-controller="HomeCtrl">
+    
+    <div class="container" ng-view>
+    </div>
+    <script src="script.js"></script>
+  </body>  
+
+  <footer>
+      <div class="container tbf-footer"> 
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted font-weight-bold">&copy; 2004 Total Body Fitness.
+            <p class="text-mutet">Website design and development by <a href="http://www.amreshkadian.com">Amresh Kadian</a>
+            </p>
+            </p>
+          </div>
+        </footer>
+      </div>
+  </footer>
+
+</html>

@@ -1,0 +1,35 @@
+
+    <!-- row 3: article/aside -->   
+    <div class="row"> 
+    <!-- row 3: Column I -->
+  <form name="myform" ng-submit="register()" novalidate>
+        <div class="col-lg-4 col-sm-4">
+        </div>   
+        <!-- row 3: Column II -->
+        <div class="col-lg-4 col-sm-4"><!--form class="form-inline"-->
+          <p>{{ signupdata.message }}</p>
+          <div class="form-group">
+            <label for="exampleInputName2">First Name</label>
+            <input type="text" ng-model="signupdata.firstname" class="form-control" id="exampleInputName2" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName2">Last Name</label>
+            <input type="text" ng-model="signupdata.lastname" class="form-control" id="exampleInputName2" placeholder="Austin">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail2">Email</label>
+            <input type="email" ng-model="signupdata.email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" ng-model="signupdata.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </div>  
+        <!-- row 3: Column III -->
+        <div class="col-lg-4 col-sm-4">
+
+        </div>
+</form>
+    </div>
+<!-- end row 3 -->

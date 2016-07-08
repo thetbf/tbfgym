@@ -1,0 +1,12 @@
+{
+  "name": "ExpressApp",
+  "version": "0.0.1",
+  "description": "A Node.js App using express",
+  "dependencies": {
+	"express": "*",
+	"body-parser": "*",
+	"websocket": "*",
+	"ws": "*"
+   },
+  "engine": "node >=0.6.x"
+}

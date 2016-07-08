@@ -1,0 +1,30 @@
+/* Styles go here */
+
+form.well.input-form {
+  margin-top: 20px;
+}
+
+.tbf-footer {
+	margin-top: 20px;
+}
+
+.userinfo {
+	margin-top: 20px;
+}
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}

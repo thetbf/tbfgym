@@ -1,0 +1,16 @@
+<form class="well input-form" name="inputform" ng-submit="submit()">
+  <div class="alert alert-success" ng-show="postResult == 1"><b>Success!</b> Welcome to TBF App</div>
+  <div class="alert alert-danger" ng-show="postResult == 2"><b>Error!</b> Incorrect email and(or) password</div>
+  <div class="form-group has-feedback" ng-class="{'has-success': inputform.email.$dirty && inputform.email.$valid, 'has-error': inputform.email.$dirty && inputform.email.$invalid}">
+    <label for="exampleInputEmail1" class="control-label">Email address</label>
+    <input type="email" name="email" ng-model="data.email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+    <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': inputform.email.$dirty && inputform.email.$valid, 'glyphicon-remove': inputform.email.$dirty && inputform.email.$invalid}" aria-hidden="true"></span>
+  </div>
+  <div class="form-group has-feedback" ng-class="{'has-success': inputform.password.$dirty && inputform.password.$valid, 'has-error': inputform.password.$dirty && inputform.password.$invalid}">
+    <label for="exampleInputPassword1" class="control-label">Password</label>  
+    <input type="password" name="password" ng-model="data.password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': inputform.password.$dirty && inputform.password.$valid, 'glyphicon-remove': inputform.password.$dirty && inputform.password.$invalid}" aria-hidden="true"></span>
+  </div>
+  <button class="btn btn-primary" type="submit" ng-disabled="loading || inputform.$invalid || inputform.$pristine">Login</button>
+  <p ng-show="loading"><span class="glyphicon glyphicon-refresh"></span>Processing...</p>
+</form>

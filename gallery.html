@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fitness Club | Gallery</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/grid_12.css">
+<link rel="stylesheet" type="text/css" media="screen" href="css/demo.css">
+    <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular.js"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular-route.js"></script>
+    <script data-require="angular.js@*" data-semver="1.3.0" src="//code.angularjs.org/1.3.0/angular-mocks.js"></script>
+    <!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script-->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/angular.strap/2.3.9/angular-strap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/angular.strap/2.3.9/angular-strap.tpl.min.js"></script> 
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+<script src="js/jquery-1.7.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/uCarousel.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script src="js/cufon-yui.js"></script>
+<script src="js/Asap_400.font.js"></script>
+<script src="js/Coolvetica_400.font.js"></script>
+<script src="js/Kozuka_M_500.font.js"></script>
+<script src="js/cufon-replace.js"></script>
+<script src="js/FF-cash.js"></script>
+<script>
+$(document)
+    .ready(function () {
+    $('.gallery')
+        ._TMS({
+        show: 0,
+        pauseOnHover: true,
+        prevBu: '.prev',
+        nextBu: '.next',
+        playBu: '.play',
+        duration: 700,
+        preset: 'fade',
+        pagination: $('.img-pags')
+            .uCarousel({
+            show: 4,
+            shift: 0
+        }),
+        pagNums: false,
+        slideshow: 7000,
+        numStatus: true,
+        banners: false,
+        waitBannerAnimation: false,
+        progressBar: false
+    })
+})
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+<![endif]-->
+</head>
+<body>
+<div class="main">
+  <div class="bg-img"></div>
+  <!--==============================header=================================-->
+
+
+  <body ng-app="demoApp" ng-controller="MainCtrl">
+    <!-- row 1: navigation -->
+    <nav class="navbar navbar-default navi-bar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand active" href="#/">Home</a>
+    </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="merchandise">Merchandise <span class="sr-only">(current)</span></a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="blog">Blog</a></li>
+        <li><a href="training">Training</a></li>
+        <li><a href="nutrition">Nutrition</a></li>
+        <li><a href="subscription">Subscriptions</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="events/calisthenics">Calisthenics</a></li>
+            <li><a href="events/yoga">Yoga</a></li>
+            <li><a href="events/weightloss">Weight Loss</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="events/mysixpack">My Six Pack</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="events/mrfitharyana">Mr. Fit Haryana</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="tools/bmicalculator">BMI Calculator</a></li>
+            <li><a href="tools/fatpercentcalculator">Fat Percent Calculator</a></li>
+            <li><a href="tools/calorieintakecalculator">Calorie Intake Calculator</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="tools/myburntcalories">My Burnt Calories</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="tools/idealweightcalculator">Ideal Weight Calculator</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <p class="navbar-text userinfo" ng-show="email">Signed in as {{email}}</p>
+      
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="logout" ng-show="email">Logout</a></li>
+        <li><a href="login" ng-show="!email">Login</a></li>
+        <li><a href="register" ng-show="!email">Signup</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="settings/profile">Profile</a></li>
+            <li><a href="settings/subscription">Subscription</a></li>
+            <li><a href="settings/workouts">Workouts</a></li>
+            <li><a href="settings/fitnessgoals">Fitness Goals</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="logout">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    
+  <!--==============================content================================-->
+  <section id="content">
+    <div class="container_12">
+      <div class="grid_12">
+        <div id="slide">
+          <div class="gallery">
+            <ul class="items">
+              <li><img src="images/gallery-big-1.jpg" alt=""></li>
+              <li><img src="images/gallery-big-5.jpg" alt=""></li>
+              <li><img src="images/gallery-big-2.jpg" alt=""></li>
+              <li><img src="images/gallery-big-6.jpg" alt=""></li>
+              <li><img src="images/gallery-big-3.jpg" alt=""></li>
+              <li><img src="images/gallery-big-7.jpg" alt=""></li>
+              <li><img src="images/gallery-big-4.jpg" alt=""></li>
+              <li><img src="images/gallery-big-8.jpg" alt=""></li>
+            </ul>
+          </div>
+          <a href="#" class="prev"></a><a href="#" class="next"></a> </div>
+      </div>
+      <div class="grid_12 top-1">
+        <div class="block-3 box-shadow">
+          <h2 class="p4"><span class="color-1">Photo</span> gallery</h2>
+          <div class="pag">
+            <div class="img-pags">
+              <ul>
+                <li><a href="#"><span><img src="images/gallery-1.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-5.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-2.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-6.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-3.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-7.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-4.jpg" alt=""></span></a></li>
+                <li><a href="#"><span><img src="images/gallery-8.jpg" alt=""></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+  <!--==============================footer=================================-->
+    <div class="container tbf-footer"> 
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted font-weight-bold">&copy; 2004 Total Body Fitness.
+          <p class="text-mutet">Website design and development by <a href="http://www.amreshkadian.com">Amresh Kadian</a>
+          </p>
+          </p>
+        </div>
+      </footer>
+    </div>
+</div>
+<script>Cufon.now();</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!--3: article/aside -->
+    <div class="row">
+    	<article class="col-lg-offset-1 col-sm-offset-1 col-lg-8 col-sm-7 col-lg-push-3 col-sm-push-4">
+            <p>{{uid}}</p>
+            <h1>Mebership Services and Subscriptions</h1>
+            <p><img src="subscription.jpg" class="pull-right img-responsive img-rounded" alt="TBF Gym Memberships" width="371" height="236">Full Use: Our Full Use membership gives you access to the gym any time. This “unlimited” option also includes participation in all classes, as well as three free personal training sessions ($87)</p>
+            
+            <p>Day Use: This option is perfect for the “work from home” crowd. Day Use membership hours are 6AM-6PM, Monday through Friday. All classes during these times are included, as well as three free personal training sessions ($80)</p>
+
+            <p>Weekend Membership: Perfect for those who use a fitness center at their work. The Weekend Membership allows access Saturday and Sunday, including all classes held those days. ($60)</p>
+
+            <p>Teen Memberships: This membership is available for teens 13-17 years old. They are allowed access to the gym Monday–Sunday between 2:30–5:30 p.m. Our staff will ensure that they receive an orientation to the weight room with a program designed exclusively for them. ($40)</p>
+
+            <p>Temporary: City Fitness provides memberships for individuals that need a gym on a temporary basis and are available for one, two or three months. Our three month temporary membership includes a free program design.</p>
+
+            <p>Drop-In: City Fitness allows folks to pay on a drop-in basis either daily or weekly.</p>
+
+                        <!-- nested row 3a: callouts -->
+         <div class="clearfix visible-xs visible-lg"></div>
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                	<div class="thumbnail">
+                        <div class="caption">
+                            <h4><span class="glyphicon glyphicon-pushpin"></span> Monthly Plan</h4>
+                            <p>Dogs and cats are susceptible to a variety of illnesses that can be completely prevented by following the appropriate vaccination schedule.</p>
+                            <p><a href="#" class="btn btn-info">Subscribe >></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                     <div class="thumbnail">
+                        <div class="caption">
+                            <h4><span class="glyphicon glyphicon-ok"></span> Annual Plan</h4>
+                            <p>Regular checkups are a key factor in pet wellness, and can often unearth problems that could lead to health issues down the road.  </p>
+                            <p><a href="#" class="btn btn-info">Subscribe >></a></p>
+                    	</div>
+                    </div>
+                </div>
+                <div class="clearfix visible-md visible-xs"></div>
+                <div class="col-lg-3 col-xs-6">
+                	<div class="thumbnail">
+                        <div class="caption">
+                            <h4><span class="glyphicon glyphicon-heart"></span> Women Plan</h4>
+                            <p>Senior pets generally require more medical attention than their younger counterparts, just as senior humans do. So when is a pet considered “senior”? </p>
+                            <p><a href="#" class="btn btn-info">Subscribe >></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                	<div class="thumbnail">
+                        <div class="caption">
+                    		<h4><span class="glyphicon glyphicon-cutlery"></span> Teen Plan</h4>
+                    		<p>Wisdom veterinarians have all had extensive training in pet nutrition and are your best resources when considering changing your pet’s diet. </p>
+                     		<p><a href="#" class="btn btn-info">Subscribe >></a></p>
+                    	</div>
+                    </div>
+                 </div>
+            </div><!-- end nested row 3a -->
+        </article>
+        <aside class="col-lg-3 col-sm-4 col-lg-pull-9 col-sm-pull-8">
+        	<h3>Become a member now</h3>
+            <form ng-submit="subscribe()">
+            <button type="button" class="btn btn-lg btn-primary" data-animation="am-flip-x" bs-dropdown aria-haspopup="true" aria-expanded="false">Select Subscription Plan<br>
+              <small>(using inlined sibling template)</small>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-repeat="i in ['Monthly', 'Quarterly', 'Annual']"><a ng-href="/subscription/{{i}}"><i class="fa fa-chevron-right"></i>&nbsp;{{i}} Plan</a>
+              </li>
+              <li><a href="/subscription/Women"><i class="fa fa-download"></i>&nbsp;Women Special Plan</a>
+              </li>
+              <li><a ng-click="$alert('Holy guacamole')"><i class="fa fa-globe"></i>&nbsp;Teens Plus Plan</a>
+              </li>
+            </ul>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <!--div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Check me out
+              </label>
+            </div-->
+            <button type="submit" class="btn btn-default">Subscribe</button>
+            <!--button type="button" class="btn" ng-click="open()">MODAL</button-->
+            <!-- THIS IS THE EXAMPLE OF A MODAL-->
+            <div class="container">
+              <h2>Modal Example</h2>
+               <!-- Trigger the modal with a button -->
+               <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+               <!-- Modal -->
+              <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <p>This is my Modal</p>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Please enter the amount to be paid:</p>
+                      <input type="text"></input>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="subscribe()">Close</button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+  
+            </div>
+            </form>
+         </aside>
+        
+
+
+        </div><!-- end row 3 -->
